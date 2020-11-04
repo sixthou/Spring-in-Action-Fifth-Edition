@@ -12,6 +12,7 @@ import tacos.Ingredient;
 import tacos.Ingredient.Type;
 import tacos.Taco;
 import tacos.data.IngredientRepository;
+import tacos.data.TacoRepository;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -26,9 +27,12 @@ public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
 
+    private TacoRepository tacoRepo;
+
     @Autowired
-    public DesignTacoController(IngredientRepository ingredientRepo){
+    public DesignTacoController(IngredientRepository ingredientRepo, TacoRepository tacoRepo){
         this.ingredientRepo = ingredientRepo;
+        this.tacoRepo = tacoRepo;
     }
 
     @GetMapping
